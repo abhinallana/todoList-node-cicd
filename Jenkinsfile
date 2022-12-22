@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh 'docker build . -t abhinallana/todo-node-app'
+                sh 'docker build . -t abhinallana/todo-node-app:v1'
                 echo "Built Success"
             }
         }
