@@ -16,8 +16,10 @@ pipeline {
         }
         stage('Docker Push'){
             steps{
-                sh 'docker push abhinallana/todo-node-app:v1'
-                echo "pushed Success"
+                withCredentials([usernamePassword(credentialsId: 'DockerCreds', passwordVariable: 'pwd', usernameVariable: 'uname')]) {
+                    sh 'docker push abhinallana/todo-node-app:v1'
+                    echo "pushed Success"
+                    } 
             }
         }
         stage('Completed'){
