@@ -10,13 +10,13 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                docker build . -t abhinallana/todo-node-app
+                sh 'docker build . -t abhinallana/todo-node-app'
                 echo "Built Success"
             }
         }
         stage('Docker Push'){
             steps{
-                docker push abhinallana/todo-node-app:v1
+                sh 'docker push abhinallana/todo-node-app:v1'
                 echo "pushed Success"
             }
         }
