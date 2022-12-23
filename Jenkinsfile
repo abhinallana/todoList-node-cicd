@@ -10,14 +10,14 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh 'docker build . -t abhinallana/todo-node-app:v1'
+                sh 'docker build . -t abhinallana/todo-node-app:v2'
                 echo "Built Success"
             }
         }
         stage('Docker Push'){
             steps{
                 withDockerRegistry([ credentialsId: "dockercreds", url: "" ]) {
-                    sh 'docker push abhinallana/todo-node-app:v1'
+                    sh 'docker push abhinallana/todo-node-app:v2'
                     echo "pushed Success"
                     } 
             }
