@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Docker Push'){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'DockerCreds', passwordVariable: 'pwd', usernameVariable: 'uname')]) {
+                withDockerRegistry([ credentialsId: "dockercreds", url: "" ]) {
                     sh 'docker push abhinallana/todo-node-app:v1'
                     echo "pushed Success"
                     } 
