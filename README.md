@@ -1,10 +1,13 @@
-# node-todo-cicd
-
-sudo apt install nodejs
-sudo apt install npm
+# NODE-TODO-CICD
 
 
-npm install
+Steps to run this App in your Local Machine :
 
-node app.js
+``` sudo apt install nodejs ```
+
+``` sudo apt install npm ```
+
+``` npm install ```
+
+``` node app.js ```
 
