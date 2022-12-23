@@ -22,6 +22,15 @@ pipeline {
                     } 
             }
         }
+        stage('Deploy to Kubernetes(Minikube)'){
+            steps{
+                dir("${env.WORKSPACE}/k8s"){
+                sh "pwd"
+                sh "kubectl apply -f deployment.yaml -n devops"
+                sh "kubectl apply -f service.yaml -n devops"
+                }
+            }
+        }
         stage('Completed'){
             steps{
                 echo "Completed"
