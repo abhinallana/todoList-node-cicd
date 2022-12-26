@@ -22,6 +22,16 @@ pipeline {
                     } 
             }
         }
+        stage('Scan with Sonarqube'){
+            steps{
+                echo 'Scanning with Sonarqube ! Please wait until it completes.'
+                sonar-scanner \
+                   -Dsonar.projectKey=todo-node-app \
+                   -Dsonar.sources=. \
+                   -Dsonar.host.url=http://172.17.0.2:9000 \
+                   -Dsonar.login=sqp_e6bb5e3d94d0eed49b341abd050ca758759f3f57
+            }
+        }
         stage('Completed'){
             steps{
                 echo "Completed"
