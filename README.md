@@ -11,3 +11,7 @@ Steps to run this App in your Local Machine :
 
 ``` node app.js ```
 
+
+To pull the app from Docker Hub :
+
+``` docker push abhinallana/todo-node-app:v1 ```
